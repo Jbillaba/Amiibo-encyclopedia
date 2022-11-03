@@ -1,0 +1,19 @@
+@media only screen and (max-width: 800px) {
+  body {
+    background-color: lightblue;
+  }
+}
+
+.App {
+  text-align: center;
+}
+.grid{
+  display: grid;
+  grid-template-columns: repeat(3, minmax(250px, 1fr));
+  grid-gap: 1em;
+  padding: 0.5em;
+}
+
+header{
+  background-color: lightblue;
+}

@@ -3,7 +3,7 @@ import Nav from "./Nav";
 export default function Header() {
     return (
         <div>
-            <h1> Amiibo  </h1>
+            <h1> Amiibo Encyclopedia </h1>
             <div className="header-nav">
                 <Nav />
             </div>

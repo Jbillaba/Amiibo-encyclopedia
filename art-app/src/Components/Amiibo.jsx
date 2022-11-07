@@ -8,7 +8,6 @@ export default function Amiibo() {
     let navigate = useNavigate()
 
     const showAmiibo = (amiibos, i ) =>{
-        console.log('its the '+ amiibos[i].name +' amiibo')
         navigate(`${amiibos[i].name}`)
     }
 
@@ -22,20 +21,40 @@ export default function Amiibo() {
         getAmiibos()
     }, [])
 
+//followed a tutorial to get the search bar working link: https://www.youtube.com/watch?v=MY6ZZIn93V8&t=685s&ab_channel=LamaDev
+    const [ search, setSearch ] = useState("");
+
+    function searchForAmiibo(event){
+      console.log('hello ')
+    }
+
     return (
         <div className='amiibo-main'>
-            <h1>
-                amiibo 
-            </h1>
+       
+        <div className='filter-buttons'> 
+            <input className='search'
+                    type="text"
+                    placeholder='search...'
+                    onChange={(e) => setSearch(e.target.value)}>
+                    </input>
+
+            <button className='search'
+                    onClick={e => searchForAmiibo(e)}> 
+            search </button> 
+
+        </div>
         <div className='grid'>
             {
-               amiibos.map((amiibo, i) => (
-                <ul key={amiibo.tail}
+               amiibos.filter((amiibo) => 
+               amiibo.name.toLowerCase().includes(search)).
+               map((amiibo, i) => (
+                <ul className='amiibo-card' 
+                key={amiibo.tail}
                     onClick={() => showAmiibo(amiibos, i)}>
-                    <img src={amiibo.image} alt={amiibo.name}/>
+                    <img className='card-image'   src={amiibo.image} alt={amiibo.name}/>
                     <h1> {amiibo.name} </h1>
 
-
+ 
                 </ul>
                ))
             }

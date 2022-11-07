@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom"
-import Amiibo from "./Amiibo"
 //TO DO: - add about page
 export default function Nav() {
     return (

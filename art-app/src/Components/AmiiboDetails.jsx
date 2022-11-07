@@ -6,7 +6,9 @@ import { BASE_URL } from "../globals"
 export default function AmiiboDetails() {
 
     let {name} = useParams()
+
     const [amiiboID, setAmiiboID] = useState('')
+
 
     useEffect(() => {
         const getAmiibo = async () => {
@@ -22,9 +24,18 @@ export default function AmiiboDetails() {
     }, [])
 
     return amiiboID ? (
-        <div className="amiibo-details"> 
-            <h1> {amiiboID.name}</h1>
-            <p> {amiiboID.character}</p>
+        <div className="amiibo-info"> 
+            <h1> Amiibo Name: {amiiboID.name}</h1>
+
+            <h2> game series: {amiiboID.gameSeries}</h2>
+            <h2> type: {amiiboID.type} </h2>
+            <h2> Amiibo series: {amiiboID.amiiboSeries} </h2>
+
+
+
+            <img className="amiibo-image"
+            src={amiiboID.image} 
+            alt="AMIIBO image"/> 
         </div>
     ): null;
 }

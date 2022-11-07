@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200&display=swap');
+
+/* To Do: make it responsive to phone */
 @media only screen and (max-width: 800px) {
   body {
     background-color: lightblue;
@@ -6,6 +9,8 @@
 
 .App {
   text-align: center;
+  background-color: #E60012;
+  color: #FFFFFF;
 }
 .grid{
   display: grid;
@@ -15,5 +20,63 @@
 }
 
 header{
-  background-color: lightblue;
+  background-color: #E60012;
 }
+
+
+.logo{
+  color: #FFFFFF;
+font-family: Montserrat;
+font-size: 50px;}
+
+.logo-container{
+  border: 3px white solid;
+  border-radius: 30px;
+}
+
+.nav-bar{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+
+  font-family: Montserrat;
+}
+
+
+
+a:link{
+  text-decoration: none;
+}
+
+a:visited{
+  text-decoration: none;
+  color: #FFFFFF;
+}
+
+.search{
+  padding: 10px;
+  font-size: 20px;
+}
+
+.amiibo-card{
+  background-color: #F3F0E5;
+  border: 3px solid #F3F0E5;
+  border-radius: 30px;
+  font-family: Montserrat ;
+  color: #252525;
+}
+
+.card-image{
+  height: 300px;
+  padding: 30px;
+}
+.amiibo-details{
+  display: grid;
+  grid-column-start: 1;
+}
+
+.amiibo-info{
+  font-family: montserrat;
+}
+
+/* TO DO: STYLE AMIIBO DETAILS TO LEFT SIDE OF THE SCREEN AS A COLUMN */

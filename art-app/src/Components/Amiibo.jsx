@@ -1,15 +1,8 @@
 import axios from 'axios'
 import { BASE_URL } from '../globals'
 import { useState, useEffect } from 'react'
-import { useNavigate } from 'react-router-dom'
 
 export default function Amiibo() {
-
-    let navigate = useNavigate()
-
-    const showAmiibo = (amiibos, i ) =>{
-        navigate(`${amiibos[i].name}`)
-    }
 
     const [amiibos, setAmiibos] = useState([])
 
@@ -24,10 +17,6 @@ export default function Amiibo() {
 //followed a tutorial to get the search bar working link: https://www.youtube.com/watch?v=MY6ZZIn93V8&t=685s&ab_channel=LamaDev
     const [ search, setSearch ] = useState("");
 
-    function searchForAmiibo(event){
-      console.log('hello ')
-    }
-
     return (
         <div className='amiibo-main'>
        
@@ -37,24 +26,20 @@ export default function Amiibo() {
                     placeholder='search...'
                     onChange={(e) => setSearch(e.target.value)}>
                     </input>
-
-            <button className='search'
-                    onClick={e => searchForAmiibo(e)}> 
-            search </button> 
-
         </div>
         <div className='grid'>
             {
                amiibos.filter((amiibo) => 
                amiibo.name.toLowerCase().includes(search)).
-               map((amiibo, i) => (
+               map((amiibo) => (
                 <ul className='amiibo-card' 
-                key={amiibo.tail}
-                    onClick={() => showAmiibo(amiibos, i)}>
+                key={amiibo.tail}>
+
                     <img className='card-image'   src={amiibo.image} alt={amiibo.name}/>
                     <h1> {amiibo.name} </h1>
-
- 
+                    <h2>Game Series: {amiibo.gameSeries}</h2>
+                    <h2>Series: {amiibo.amiiboSeries}</h2>
+                    <h2>Type: {amiibo.type}</h2>
                 </ul>
                ))
             }

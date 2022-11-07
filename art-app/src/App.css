@@ -1,10 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200&display=swap');
 
-/* To Do: make it responsive to phone */
-@media only screen and (max-width: 800px) {
-  body {
-    background-color: lightblue;
-  }
+
+body{
+  background-color: #E60012;
 }
 
 .App {
@@ -38,11 +36,8 @@ font-size: 50px;}
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
-
   font-family: Montserrat;
 }
-
-
 
 a:link{
   text-decoration: none;
@@ -64,19 +59,27 @@ a:visited{
   border-radius: 30px;
   font-family: Montserrat ;
   color: #252525;
+  ;
 }
 
 .card-image{
   height: 300px;
   padding: 40px;
 }
-.amiibo-details{
-  display: grid;
-  grid-column-start: 1;
-}
 
 .amiibo-info{
   font-family: montserrat;
 }
 
-/* TO DO: STYLE AMIIBO DETAILS TO LEFT SIDE OF THE SCREEN AS A COLUMN */
+/* followed this tutorial to make it display the way it does https://www.taniarascia.com/easiest-flex-grid-ever/ */
+
+@media screen and (max-width: 600px) {
+.grid{
+  display: flex;
+  flex-direction: column;
+}
+
+  .amiibo-card{
+flex: 1;  
+}
+}

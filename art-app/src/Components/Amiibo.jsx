@@ -23,10 +23,12 @@ export default function Amiibo() {
         <div className='filter-buttons'> 
             <input className='search'
                     type="text"
-                    placeholder='search...'
+                    placeholder='search....'
                     onChange={(e) => setSearch(e.target.value)}>
-                    </input>
+            </input>
+
         </div>
+
         <div className='grid'>
             {
                amiibos.filter((amiibo) => 

@@ -32,8 +32,7 @@ export default function Amiibo() {
         <div className='grid'>
             {
                amiibos.filter((amiibo) => 
-               amiibo.name.toLowerCase().includes(search)).
-               map((amiibo) => (
+               amiibo.name.toLowerCase().includes(search)).map((amiibo) => (
                 <ul className='amiibo-card' 
                 key={amiibo.tail}>
 
